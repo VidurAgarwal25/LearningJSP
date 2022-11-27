@@ -22,9 +22,16 @@ public class FormInServlet extends HttpServlet{
                 out.println("<h2> Email:- "+email+"</h2>");
                 out.println("<h2> Course:- "+courses+"</h2>");
                 out.println("<h2> Gender:- "+gender+"</h2>");
+                //forward method in request dispatcher
+                //url of next servlet in parenthesis
+                RequestDispatcher reqdispatcher=req.getRequestDispatcher("RequestDispatcher");
+                reqdispatcher.forward(req,resp);
             }
             else{
                 out.println("<h2>You have not agreed to the terms and conditions</h2>");
+                //including content of index.html if checked nox is not checked
+                RequestDispatcher reqdispatcher=req.getRequestDispatcher("index.html");
+                reqdispatcher.include(req,resp);
             }
         }
     

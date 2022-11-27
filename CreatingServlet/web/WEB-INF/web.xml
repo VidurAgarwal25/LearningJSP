@@ -4,6 +4,12 @@
 	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	 version="3.1">
+    <!--welcome file list-->
+    <welcome-file-list>
+        <welcome-file>
+            Home.html
+        </welcome-file>
+    </welcome-file-list>
     <!--servlet declaration-->
     <servlet>
         <servlet-name>
@@ -41,6 +47,14 @@
             com.servlets.FormInServlet
         </servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>
+            RequestDispatcher
+        </servlet-name>
+        <servlet-class>
+            com.servlets.ForwardRequestDispatcher
+        </servlet-class>
+    </servlet>
     
     <!--mapping declaration-->
     <servlet-mapping>
@@ -69,6 +83,13 @@
             FormServlet
         </servlet-name>
         <url-pattern>/FormInServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>
+            RequestDispatcher
+        </servlet-name>
+        <url-pattern>/RequestDispatcher</url-pattern>
     </servlet-mapping>
     
     <session-config>
