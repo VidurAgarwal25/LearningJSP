@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-	 version="3.1">
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <!--welcome file list-->
     <welcome-file-list>
         <welcome-file>
@@ -28,8 +24,6 @@
             com.servlets.CreateServletUsingGenericServletClass
         </servlet-class>
     </servlet>
-    
-    
     <servlet>
         <servlet-name>
             CreatingServletUsingHttpServlet
@@ -38,7 +32,6 @@
             com.servlets.CreateServletUsingHttpServlet
         </servlet-class>
     </servlet>
-    
     <servlet>
         <servlet-name>
             FormServlet
@@ -55,43 +48,53 @@
             com.servlets.ForwardRequestDispatcher
         </servlet-class>
     </servlet>
-    
     <!--mapping declaration-->
+    <servlet>
+        <servlet-name>LearningAttributeFirstServlet</servlet-name>
+        <servlet-class>com.servlets.LearningAttributeFirstServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LearningAttributeSecondServlet</servlet-name>
+        <servlet-class>com.servlets.LearningAttributeSecondServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>
             CreatingFirstServlet
         </servlet-name>
         <url-pattern>/web</url-pattern>
     </servlet-mapping>
-    
     <servlet-mapping>
         <servlet-name>
             CreatingServletUsingGenericClass
         </servlet-name>
         <url-pattern>/genericclass</url-pattern>
     </servlet-mapping>
-    
     <servlet-mapping>
         <servlet-name>
             CreatingServletUsingHttpServlet
         </servlet-name>
         <url-pattern>/httpservlet</url-pattern>
     </servlet-mapping>
-    
     <servlet-mapping>
         <servlet-name>
             FormServlet
         </servlet-name>
         <url-pattern>/FormInServlet</url-pattern>
     </servlet-mapping>
-    
     <servlet-mapping>
         <servlet-name>
             RequestDispatcher
         </servlet-name>
         <url-pattern>/RequestDispatcher</url-pattern>
     </servlet-mapping>
-    
+    <servlet-mapping>
+        <servlet-name>LearningAttributeFirstServlet</servlet-name>
+        <url-pattern>/LearningAttributeFirstServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LearningAttributeSecondServlet</servlet-name>
+        <url-pattern>/LearningAttributeSecondServlet</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
