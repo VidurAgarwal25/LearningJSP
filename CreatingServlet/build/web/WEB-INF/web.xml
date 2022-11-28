@@ -48,7 +48,7 @@
             com.servlets.ForwardRequestDispatcher
         </servlet-class>
     </servlet>
-    <!--mapping declaration-->
+    
     <servlet>
         <servlet-name>LearningAttributeFirstServlet</servlet-name>
         <servlet-class>com.servlets.LearningAttributeFirstServlet</servlet-class>
@@ -63,8 +63,10 @@
     </servlet>
     <servlet>
         <servlet-name>CookieSecondServlet</servlet-name>
-        <servlet-class>CookieSecondServlet</servlet-class>
+        <servlet-class>com.servlets.CookieSecondServlet</servlet-class>
     </servlet>
+    
+    <!--mapping declaration-->
     <servlet-mapping>
         <servlet-name>
             CreatingFirstServlet
