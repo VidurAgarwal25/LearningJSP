@@ -57,6 +57,14 @@
         <servlet-name>LearningAttributeSecondServlet</servlet-name>
         <servlet-class>com.servlets.LearningAttributeSecondServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CookieFirstServlet</servlet-name>
+        <servlet-class>com.servlets.CookieFirstServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CookieSecondServlet</servlet-name>
+        <servlet-class>CookieSecondServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>
             CreatingFirstServlet
@@ -94,6 +102,14 @@
     <servlet-mapping>
         <servlet-name>LearningAttributeSecondServlet</servlet-name>
         <url-pattern>/LearningAttributeSecondServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CookieFirstServlet</servlet-name>
+        <url-pattern>/CookieFirstServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CookieSecondServlet</servlet-name>
+        <url-pattern>/CookieSecondServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

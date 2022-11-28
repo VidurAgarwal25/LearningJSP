@@ -2,11 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package com.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Asus
  */
-public class LearningAttributeSecondServlet extends HttpServlet {
+public class CookieSecondServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,33 +34,26 @@ public class LearningAttributeSecondServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LearningAttributeSecondServlet</title>");            
+            out.println("<title>Servlet CookieSecondServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Hello To Second Servlet in LearningAttributes</h1>");
-             int a=Integer.parseInt(request.getParameter("a"));
-            int b=Integer.parseInt(request.getParameter("b"));
-            int p=a*b;
-            System.out.println("Product is "+p);
-            
-          int s=(int) request.getAttribute("sum");
-            
-            out.println("<h1>");
-            out.println("First number is "+a);
-            out.println("<br>");
-            out.println("Second number is "+b);
-            out.println("<br>");
-            out.println("Product is "+p);
-            out.println("<br>");
-            out.println("Sum is "+s);
-            
-            
-            out.println("</h1>");
-          
-           
+           out.println("<h1>Welcome to CookieSecondServlet</h1>");
+           String name="";
+            //getting cookies
+            Cookie[] cookies=request.getCookies();
+            if(cookies==null){
+                out.println("<h1>First go to Home Page to Submit</h1>");
+                return;
+            }
+            else{
+                for(Cookie c:cookies){
+                    if(c.getName().equals("user_name"))
+                        name=c.getValue();
+                }
+                out.println("<p> Name is:- "+name);
+            }
             out.println("</body>");
             out.println("</html>");
-           
         }
     }
 
@@ -87,7 +80,17 @@ public class LearningAttributeSecondServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    /**
+     * Returns a short description of the servlet.
+     *
+     * @return a String containing servlet description
+     */
     @Override
     public String getServletInfo() {
         return "Short description";
